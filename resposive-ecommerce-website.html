@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Jersey+10+Charted&family=Micro+5+Charted&family=Special+Gothic+Expanded+One&display=swap"
+    rel="stylesheet" />
+  <title>ecommerce website</title>
+
+  <head>
+    <style>
+      body {
+          width: 100%;
+        overflow-x: hidden;
+
+      }
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+
+
+      }
+
+
+
+
+
+
+      @keyframes widthanime {
+        from {
+          opacity: 0;
+          clip-path: inset(100% 100% 0 0);
+        }
+
+        to {
+          opacity: 1;
+          clip-path: inset(0 0 0 0);
+        }
+      }
+
+      @keyframes widthanime2 {
+        from {
+          opacity: 0;
+          clip-path: inset(100% 0 100%);
+        }
+
+        to {
+          opacity: 1;
+          clip-path: inset(0 0 0 0);
+        }
+      }
+
+      @keyframes slideUp {
+        0% {
+
+          transform: translateY(100px);
+        }
+
+        60% {
+
+          transform: translateY(-10px);
+        }
+
+        100% {
+
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes cardsanime {
+        from {
+          clip-path: inset(0 0 100% 0);
+        }
+
+        to {
+
+          clip-path: inset(0 0 0 0);
+        }
+      }
+
+     
+
+
+  
+
+      body.loaded .content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      body.loaded .content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      nav {
+        background-color: transparent;
+        backdrop-filter: blur(3px);
+        height: 120px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        position: fixed;
+        z-index: 1;
+      }
+
+      #not {
+
+        width: 570px;
+
+
+
+      }
+
+      #logo2 {
+        display: none;
+      }
+
+
+      nav #menulist {
+
+        display: flex;
+        justify-items: space-between;
+        list-style-type: none;
+        gap: 50px;
+        font-size: 20px;
+
+        padding: 0;
+      }
+
+      #logo h1 {
+        padding-left: 30px;
+        font-size: 50px;
+      }
+
+      #menu-icon {
+        margin-right: 40px;
+        display: none;
+      }
+
+      #plus {
+        display: none;
+      }
+
+      .cross {
+        display: none;
+      }
+
+      #menulist li a {
+        text-decoration: none;
+        font-size: 23px;
+        color: #ffffff;
+        transition: 0.5s all;
+        width: 100px;
+
+      }
+
+      #menulist li a:hover #helper-icon {
+        transform: rotate(90deg);
+        color: #acafb3;
+        transition: 0.5s all;
+      }
+
+      #menulist li a:hover {
+        color: #acafb3;
+        transition: 0.5s all;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      .dropdown {
+        position: absolute;
+        height: 202px;
+        width: 200px;
+        background-color: #ffffff;
+        list-style-type: none;
+        margin-right: 50px;
+        display: none;
+      }
+
+
+      .dropdown li {
+
+
+        border-bottom: 1px solid white;
+        font-size: 25px;
+        font-weight: 600;
+
+      }
+
+      .dropdown li .plus-symbol {
+        width: 200px;
+        height: 50px;
+        color: #10182F;
+        border-bottom: 1px solid gainsboro;
+      }
+
+      #hoverme .dropdown li a {
+        color: #10182F;
+
+        width: 200px;
+        align-items: center;
+        height: 50px
+      }
+
+
+
+      #hoverme .dropdown li :hover a {
+        background-color: #10182F;
+        color: white;
+      }
+
+
+
+
+
+      #hoverme:hover .dropdown {
+        display: block;
+      }
+
+      #frame {
+        top: 0px;
+        z-index: 0;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100vw;
+        height: calc(100vh - 120px);
+      }
+
+      #slider {
+        display: flex;
+        transition: transform 1s ease-in-out;
+      }
+
+      .image {
+        width: 100vw;
+        height: 100vh;
+        height: calc(100vh - 120px);
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .buttons {
+        position: absolute;
+        height: 100px;
+        width: 100%;
+        margin-top: 30%;
+      }
+
+      #back,
+      #next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        z-index: 100;
+        cursor: pointer;
+        padding: 10px;
+        display: flex;
+        align-self: center;
+      }
+
+      #next {
+        right: 15px;
+        border: none;
+      }
+
+      #back {
+        left: 15px;
+      }
+
+      #next img {
+        transform: rotate(180deg);
+      }
+
+      #about {
+        background-color: rgb(0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+      }
+
+      .slider-item {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        color: black;
+        z-index: 100000;
+
+
+      }
+
+      .overlay {
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .caption {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        z-index: 9999;
+      }
+
+      .caption h1 {
+        color: white;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 4vh;
+        margin: 0;
+        padding: 0 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      .caption1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 30%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        z-index: 9999;
+        text-align: center;
+      }
+
+      .caption1 input {
+
+        width: 700px;
+        height: 60px;
+        font-size: 2vw;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        font-family: "Big Shoulders", sans-serif;
+      }
+
+      .caption1 h1 {
+        color: white;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 4vh;
+        margin-bottom: 10px;
+      }
+
+      input[type="search"]::-webkit-search-cancel-button {
+        display: none;
+      }
+
+      .caption1 input:focus {
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        padding-left: 10px;
+        font-size: 23px;
+      }
+
+      .caption1 input::placeholder {
+        padding-left: 10px;
+      }
+
+      #search-container {
+        position: relative;
+      }
+
+      #search {
+        position: absolute;
+        right: 1px;
+        top: 4px;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 30px;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        padding: 8px 20px 8px 20px;
+        color: rgb(255, 255, 255);
+        background-color: #132440;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      #search:hover {
+        color: #10182F;
+        background-color: white;
+
+        transition: all 0.3s ease-in-out;
+
+      }
+
+
+      #dots-container {
+        top: 70%;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+
+      }
+
+      .dot {
+        width: 15px;
+        height: 15px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .dot.active {
+        background-color: #ffffff;
+        animation: pulse 1s;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.5);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        margin-top: 50px;
+      }
+
+      main {
+        color: #1a3d64;
+      }
+
+      .cards {
+
+        display: flex;
+        width: 100%;
+        margin-top: 80px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+   
+
+
+      
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      .card {
+        perspective: 1000px;
+        width: 200px;
+        height: 250px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        margin-top: 20px;
+               transform: translateY(50px);  
+  transition: transform 3s ease;
+  filter: blur(5px);
+  transform: translateX(-50%);
+  opacity: 0;
+     
+      
+
+      }
+      
+.card.visible {
+  opacity: 1;
+    filter: blur(0);
+      transform: translateX(0);
+   
+}
+
+      .card img {
+        padding-top: 20px;
+      }
+
+      .card h3 {
+        margin-top: 20px;
+      }
+
+      .card p {
+        color: black;
+        margin-top: 10px;
+        font-size: 20px;
+      }
+
+      .card:hover img {
+        transform-style: preserve-3d;
+        animation: flip 1s;
+      }
+
+      .card:hover {
+        border: 1px solid #132440;
+
+        transition: 0.5s all;
+      }
+
+      .heading {
+        color: #1a3d64;
+        text-align: center;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        margin-top: 100px;
+        animation: widthanime2 3s linear;
+      
+
+      }
+
+      .article {
+        display: flex;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        justify-items: space-between;
+        margin-top: 100px;
+        animation: widthanime2 3s linear;
+      }
+
+      .aboutus {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+
+      .aboutus img {
+        height: 400px;
+        animation: float 2s ease-in-out infinite;
+        margin-bottom: 10px;
+      }
+
+      .aboutus p {
+        color: #1a3d64;
+        width: 50vh;
+        margin-left: 30px;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(40px);
+        }
+
+        50% {
+          transform: translateY(10px);
+        }
+
+        100% {
+          transform: translateY(40px);
+        }
+      }
+
+      .article2 {
+
+        display: flex;
+        height: 800px;
+        flex-wrap: wrap;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        animation: widthanime 3s linear;
+
+      }
+
+      .article2 .aboutus {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 500px;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        height: 1000px;
+      }
+
+      .article2 .aboutusimg {
+        height: 350px;
+      }
+
+      .aboutus p {
+        margin-left: 0px;
+
+      }
+
+      .article3 {
+        display: flex;
+        margin-top: 150px;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        width: 100%;
+        height: 600px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        animation: slideUp 10s linear;
+        animation-range: entry 30% cover 40%;
+
+
+      }
+
+      .aboutimg {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+
+      .impotimage {
+        animation: float 2s ease-in-out infinite;
+
+      }
+
+      .smallcards {
+
+        border-radius: 10px;
+
+        height: 17vh;
+
+      }
+
+      .smallcards p {
+        color: #35393d;
+        font-size: 17px;
+      }
+
+      @keyframes flip {
+        0% {
+          transform: rotateY(0deg);
+        }
+
+        50% {
+          transform: rotateY(180deg);
+          /* Halfway through the animation */
+        }
+
+        100% {
+          transform: rotateY(360deg);
+          /* Complete the rotation */
+        }
+      }
+
+      .smallcards:hover img {
+        transform-style: preserve-3d;
+        animation: flip 1s;
+      }
+
+      .heading1 {
+        animation: widthanime 3s linear;
+        width: 100%;
+        margin-top: 100px;
+        color: #10182F;
+        text-align: center;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+
+      .para {
+        width: 50vw;
+        font-size: 25px;
+      }
+
+      .points img {
+
+        height: 25px;
+        animation: none;
+
+
+      }
+
+      .points:hover img {
+        transform-style: preserve-3d;
+        animation: flip 1s;
+
+      }
+
+
+      .points ul {
+        list-style-type: none;
+        font-size: 21px;
+      }
+
+      .point1 {
+        display: flex;
+      }
+
+      .points {
+        box-shadow: 0 12px 30px 0 rgba(29, 197, 206, 0.15);
+        margin-top: 20px;
+        align-content: center;
+        padding-left: 10px;
+        height: 130px;
+
+      }
+
+      .para img {
+        height: 60px;
+        animation: none;
+
+      }
+
+      .import {
+        display: flex;
+        align-items: center;
+      }
+
+
+      .sellcards {
+        position: relative;
+        padding: 80px 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        flex-wrap: wrap;
+
+      }
+
+
+
+
+      .all {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 50px;
+        gap: 15px;
+        box-sizing: border-box;
+        align-content: center;
+        justify-content: space-evenly;
+
+        flex-shrink: 0;
+      }
+
+
+      .sellcard {
+        height: 500px;
+        width: 400px;
+        background-color: rgb(255, 255, 255);
+        margin-top: 80px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+        flex-direction: column;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        justify-content: space-between;
+        animation: cardsanime 3s linear;
+      }
+
+      .sellcard:hover {
+        transform: scale(1.1);
+      }
+
+
+
+      .sellcards .bg {
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+
+      }
+
+      .headingofcards {
+        width: 100%;
+
+        text-align: center;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        animation: widthanime2 3s linear;
+      }
+
+      .imgbox {
+        margin-top: -50px;
+        height: 250px;
+        width: 300px;
+
+      }
+
+      .imgbox img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .pricebar {
+        background-color: rgb(223, 240, 255);
+        color: black;
+        width: 250px;
+        height: 40px;
+        text-align: center;
+        padding-top: 7px;
+
+      }
+
+      .about {
+        color: black;
+        margin-left: 30px;
+      }
+
+      .about h2 {
+        margin-bottom: 10px;
+      }
+
+      .details {
+
+        width: 100%;
+        height: 50px;
+        padding: 10px 0px 0px 30px;
+        border-top: 1px solid black;
+      }
+
+      .details a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .about:hover h2 {
+        color: #132440;
+      }
+
+
+      .footer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 1280px;
+        width: 95%;
+        background: #10182F;
+        border-radius: 6px;
+
+
+      }
+
+      .footer-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 3.5rem;
+        padding: 60px;
+        font-family: "Big Shoulders", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        color: white;
+        background-color: #10182F;
+      }
+
+
+
+      .footer-row .footer-col h4 {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+
+      .footer-col .links {
+        margin-top: 20px;
+      }
+
+      .footer-col .links li {
+        list-style: none;
+        margin-bottom: 10px;
+      }
+
+      .footer-col .links li a {
+        text-decoration: none;
+        color: #bfbfbf;
+      }
+
+      .footer-col .links li a:hover {
+        color: #fff;
+      }
+
+      .footer-col p {
+        margin: 20px 0;
+        color: #bfbfbf;
+        max-width: 300px;
+      }
+
+      .footer-col form {
+        display: flex;
+        gap: 5px;
+      }
+
+      .footer-col input {
+        height: 40px;
+        border-radius: 6px;
+        background: none;
+        width: 100%;
+        outline: none;
+        border: 1px solid #7489C6;
+        caret-color: #fff;
+        color: #fff;
+        padding-left: 10px;
+      }
+
+      .footer-col input::placeholder {
+        color: #ccc;
+      }
+
+      .footer-col form button {
+        background: #fff;
+        outline: none;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.2s ease;
+      }
+
+      .footer-col form button:hover {
+        background: #cecccc;
+      }
+
+      .footer-col .icons {
+        display: flex;
+        margin-top: 30px;
+        gap: 30px;
+        cursor: pointer;
+      }
+
+      .footer-col .icons i {
+        color: #afb6c7;
+      }
+
+      .footer-col .icons i:hover {
+        color: #fff;
+      }
+
+      #helper {
+        display: flex;
+
+      }
+
+      #helper-icon {
+        height: 25px;
+        transform: rotate(270deg);
+
+
+      }
+
+      #contact-info {
+        display: none;
+      }
+
+      .imgsize {
+
+        height: 400px;
+        position: relative;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      @media (min-width: 768px) and (max-width: 1024px) {
+        nav {
+          height: 50px;
+        }
+
+        nav #menulist {
+
+          position: absolute;
+          z-index: 10000;
+          top: -15px;
+          left: 0px;
+          right: 0;
+          flex-direction: column;
+          width: 150px;
+          height: 1100vh;
+          padding: 0px;
+          margin: 0;
+          border: 0;
+          background-color: #132440;
+          padding-top: 30px;
+          transition: all 0.5s;
+          gap: 40px;
+          border-right: 1px solid white;
+          overflow: hidden;
+        }
+
+        nav #menulist li {
+
+          padding-left: 30px;
+          color: white;
+
+        }
+
+
+        nav #menulist a {
+          width: 350px;
+          font-size: 30px;
+        }
+
+        .menu-remover {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+
+        .cross {
+          border: 1px solid white;
+          border-radius: 50px;
+          height: 50px;
+          cursor: pointer;
+        }
+
+
+        #hoverme .dropdown li a {
+          width: 350px;
+          color: white;
+        }
+
+        #hoverme .dropdown li a:hover {
+          color: gainsboro;
+        }
+
+        #hoverme .dropdown li :hover a {
+          background-color: transparent;
+        }
+
+        .plus-symbol {
+          cursor: pointer;
+          display: flex;
+          width: 300px;
+          height: 45px;
+          justify-content: space-between;
+          border-bottom: 1px solid white;
+          align-items: center;
+        }
+
+        #plus {
+          height: 25px;
+
+        }
+
+        nav .dropdown li a :hover {
+          background-color: transparent;
+        }
+
+
+        nav .dropdown {
+          background-color: transparent;
+          position: relative;
+          width: 320px;
+          height: 280px;
+          margin-top: 10px;
+        }
+
+        .logo2 {
+          display: block;
+        }
+
+        nav .dropdown li {
+
+          position: relative;
+          right: 20px;
+          margin-top: 10px;
+          text-decoration: none;
+          width: 100px;
+          font-weight: 400;
+          border: none;
+          font-size: 20px;
+
+        }
+
+        .dropdown li .plus-symbol {
+          width: 300px;
+          height: 60px;
+        }
+
+        nav #menulist img {
+
+          display: block;
+        }
+
+        #contact-info {
+          display: block;
+          font-size: 25px;
+          color: white;
+          justify-content: center;
+          width: 350px;
+          height: 400px;
+        }
+
+        #contact-info h1 {
+          margin-left: 30px;
+        }
+
+        #contact-info-points {
+          list-style-type: none;
+          padding-top: 30px;
+        }
+
+        #contact-info-points li {
+          margin-top: 10px;
+          font-size: 25px;
+          display: flex;
+        }
+
+        #contact-info-points li:hover {
+          color: gainsboro;
+        }
+
+
+        .aboutusimg {
+          height: 100px;
+
+        }
+
+        .heading {
+          margin-top: 200px;
+        }
+
+        #frame {
+          top: 0px;
+          height: 100vh;
+          object-fit: cover;
+          position: relative;
+        }
+
+        #slider {
+          height: auto;
+
+          top: 20px;
+        }
+
+
+
+        #logo2 {
+          display: block;
+        }
+
+
+
+
+        .image {
+          height: 100vh;
+        }
+
+        #menu {
+          display: block;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+        }
+
+        #menu img {
+          height: 30px;
+        }
+
+        #menu-icon {
+          display: block;
+        }
+
+        .buttons {
+          position: absolute;
+          z-index: 100;
+          height: 100px;
+          width: 100%;
+          top: 50%;
+        }
+
+        .caption1 input {
+          width: 400px;
+          height: 40px;
+          font-size: 20px;
+        }
+
+        .caption1 #search {
+          top: 0;
+          right: 4px;
+          bottom: 1px;
+          padding: 5px 15px 5px 15px;
+          margin-bottom: 1px;
+        }
+
+        .caption h1 {
+          font-size: 3vh;
+        }
+
+        #back,
+        #next {
+          position: absolute;
+          top: 0;
+          transform: translateY(-50%);
+          background-color: transparent;
+          border: none;
+          z-index: 100;
+          cursor: pointer;
+          padding: 10px;
+        }
+
+        #next img {
+          height: 40px;
+        }
+
+        #back img {
+          height: 40px;
+        }
+
+        .slider-item {
+          position: relative;
+          height: 100vh;
+          width: 100vw;
+
+        }
+
+        #search {
+          margin-top: 1px;
+          margin-right: -3px;
+          padding: 6px 13px;
+          font-size: 25px;
+        }
+
+        .buttons {
+          position: absolute;
+          z-index: 100;
+          height: 50px;
+          width: 100%;
+          top: 200px;
+        }
+
+        .footer {
+          position: relative;
+          bottom: 0;
+          left: 0;
+          transform: none;
+          width: 100%;
+          border-radius: 0;
+        }
+
+        .footer .footer-row {
+          padding: 20px;
+          gap: 1rem;
+        }
+
+        .footer-col form {
+          display: block;
+        }
+
+        .footer-col form :where(input, button) {
+          width: 100%;
+        }
+
+        .footer-col form button {
+          margin: 10px 0 0 0;
+        }
+
+
+        .article3 {
+          margin-top: 100vh;
+        }
+
+        .article {
+          display: flex;
+
+        }
+
+        .article2 {
+          margin-top: 100px;
+
+        }
+
+        .article2 .aboutus {
+          flex-wrap: wrap;
+          display: flex;
+          flex-direction: column-reverse;
+
+
+
+        }
+
+        .aboutusimg {
+          margin-top: -10px;
+
+        }
+
+        .article2 {
+          margin-top: 0px;
+
+        }
+
+        .article2 .aboutusimg {
+          margin-top: -40px;
+        }
+
+
+        .article3 {
+          margin-top: 50px;
+
+          justify-items: space-around;
+          height: 2100px;
+
+        }
+
+        .para {
+          width: 90vw;
+        }
+
+        .article3 .smallcards {
+          text-align: center;
+          margin-top: 50px;
+          width: 80vw;
+        }
+
+        .impotimage {
+          order: 1;
+          margin-top: 20px;
+          align-self: center;
+        }
+
+        .aboutimg {
+          flex-direction: column;
+          align-items: center;
+          color: #10182F;
+        }
+
+        .headingofcards {
+          margin-top: 50px;
+        }
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      @media only screen and (max-width: 767px) {
+        nav {
+          height: 50px;
+        }
+
+        nav #menulist {
+
+          position: absolute;
+          z-index: 10000;
+          top: -15px;
+          left: 0px;
+          right: 0;
+          flex-direction: column;
+          width: 150px;
+          height: 1100vh;
+          padding: 0px;
+          margin: 0;
+          border: 0;
+          background-color: #132440;
+          padding-top: 30px;
+          transition: all 0.5s;
+          gap: 40px;
+          border-right: 1px solid white;
+          overflow: hidden;
+        }
+
+        nav #menulist li {
+
+          padding-left: 30px;
+          color: white;
+
+        }
+
+        nav #menulist a {
+          width: 350px;
+          font-size: 30px;
+        }
+          .menu-remover {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+          .cross {
+          border: 1px solid white;
+          border-radius: 50px;
+          height: 50px;
+          cursor: pointer;
+        }
+
+        #hoverme .dropdown li a {
+          width: 350px;
+          color: white;
+        }
+
+        #hoverme .dropdown li a:hover {
+          color: gainsboro;
+        }
+
+        #hoverme .dropdown li :hover a {
+          background-color: transparent;
+        }
+
+        .plus-symbol {
+          cursor: pointer;
+          display: flex;
+          width: 300px;
+          height: 45px;
+          justify-content: space-between;
+          border-bottom: 1px solid white;
+          align-items: center;
+        }
+
+        #plus {
+          height: 25px;
+
+        }
+
+        nav .dropdown li a :hover {
+          background-color: transparent;
+        }
+
+
+        nav .dropdown {
+          background-color: transparent;
+          position: relative;
+          width: 320px;
+          height: 280px;
+          margin-top: 10px;
+        }
+
+        .logo2 {
+          display: block;
+        }
+
+        nav .dropdown li {
+
+          position: relative;
+          right: 20px;
+          margin-top: 10px;
+          text-decoration: none;
+          width: 100px;
+          font-weight: 400;
+          border: none;
+          font-size: 20px;
+
+        }
+
+        .dropdown li .plus-symbol {
+          width: 300px;
+          height: 60px;
+        }
+
+        nav #menulist img {
+
+          display: block;
+        }
+
+        #contact-info {
+          display: block;
+          font-size: 25px;
+          color: white;
+          justify-content: center;
+          width: 350px;
+          height: 400px;
+        }
+
+        #contact-info h1 {
+          margin-left: 30px;
+        }
+
+        #contact-info-points {
+          list-style-type: none;
+          padding-top: 30px;
+        }
+
+        #contact-info-points li {
+          margin-top: 10px;
+          font-size: 25px;
+          display: flex;
+        }
+
+        #contact-info-points li:hover {
+          color: gainsboro;
+        }
+
+        .article .aboutusimg {
+          height: 300px;
+          width: 400px;
+        }
+
+
+
+
+        #frame {
+          top: 0px;
+          height: 100vh;
+          object-fit: cover;
+          position: relative;
+        }
+
+        #slider {
+          height: auto;
+
+          top: 20px;
+        }
+
+
+
+        #logo2 {
+          display: block;
+        }
+
+        .imgsize {
+          order: 1;
+          height: 500px;
+        }
+
+
+
+
+        .image {
+          height: 100vh;
+        }
+
+        #menu {
+          display: block;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+        }
+
+        #menu img {
+          height: 30px;
+        }
+
+        #menu-icon {
+          display: block;
+        }
+
+        .buttons {
+          position: absolute;
+          z-index: 100;
+          height: 100px;
+          width: 100%;
+          top: 50%;
+        }
+
+        .caption1 input {
+          width: 400px;
+          height: 40px;
+          font-size: 20px;
+        }
+
+        .caption1 #search {
+          top: 0;
+          right: 4px;
+          bottom: 1px;
+          padding: 5px 15px 5px 15px;
+          margin-bottom: 1px;
+        }
+
+        .caption h1 {
+          font-size: 3vh;
+        }
+
+        #back,
+        #next {
+          position: absolute;
+          top: 0;
+          transform: translateY(-50%);
+          background-color: transparent;
+          border: none;
+          z-index: 100;
+          cursor: pointer;
+          padding: 10px;
+        }
+
+        #next img {
+          height: 40px;
+        }
+
+        #back img {
+          height: 40px;
+        }
+
+        .slider-item {
+          position: relative;
+          height: 100vh;
+          width: 100vw;
+
+        }
+
+        #search {
+          margin-top: 1px;
+          margin-right: -3px;
+          padding: 6px 13px;
+          font-size: 25px;
+        }
+
+        .buttons {
+          position: absolute;
+          z-index: 100;
+          height: 50px;
+          width: 100%;
+          top: 200px;
+        }
+
+        .footer {
+          position: relative;
+          bottom: 0;
+          left: 0;
+          transform: none;
+          width: 100%;
+          border-radius: 0;
+        }
+
+        .footer .footer-row {
+          padding: 20px;
+          gap: 1rem;
+        }
+
+        .footer-col form {
+          display: block;
+        }
+
+        .footer-col form :where(input, button) {
+          width: 100%;
+        }
+
+        .footer-col form button {
+          margin: 10px 0 0 0;
+        }
+
+
+        .article3 {
+          margin-top: 100vh;
+        }
+
+        .article {
+          display: flex;
+
+        }
+
+        .article2 {
+          margin-top: 100px;
+
+        }
+
+        .article2 .aboutus {
+          flex-wrap: wrap;
+          display: flex;
+          height: 1000px;
+
+
+
+
+
+        }
+
+        .article2 .aboutusimg {
+          height: 290px;
+          width: 400px;
+        }
+
+        .aboutusimg {
+          margin-top: -10px;
+
+        }
+
+        .article2 {
+          margin-top: 0px;
+          height: 800px;
+        }
+
+
+
+
+        .article3 {
+          margin-top: 50px;
+
+
+          height: 2150px;
+          gap: 100px;
+
+
+        }
+
+        .para {
+          width: 90vw;
+        }
+
+        .article3 .smallcards {
+          text-align: center;
+          margin-top: 50px;
+          width: 80vw;
+        }
+
+        .impotimage {
+          order: 1;
+          height: 600px;
+
+
+        }
+
+        .impotimage img {
+          height: 300px;
+
+        }
+
+        .aboutimg {
+          flex-direction: column;
+          align-items: center;
+          color: #10182F;
+          gap: 100px;
+
+
+        }
+
+        .headingofcards {
+          margin-top: 50px;
+        }
+
+
+      }
+
+      @media (min-width: 1025px) and (max-width: 1240px) {
+
+        .article3 {
+
+          margin-top: 50px;
+          justify-items: space-around;
+          height: 180vh;
+
+        }
+
+        .article2 .para {
+
+          width: 70vh;
+        }
+
+
+        .impotimage {
+          order: 1;
+          margin-top: 20px;
+          align-self: center;
+        }
+
+        .aboutimg {
+          flex-direction: column;
+          align-items: center;
+          color: #10182F;
+        }
+
+        .heading {
+          margin-top: 200px;
+        }
+      }
+
+
+
+      @media only screen and (max-width: 580px) {
+        .article2 {
+          height: 1000px;
+        }
+
+        .heading {
+          margin-top: 50px;
+        }
+
+      }
+
+      @media only screen and (max-width: 480px) {
+        .heading {
+          margin-top: 100px;
+        }
+
+        .article .aboutusimg {
+          height: 300px;
+          width: 300px;
+        }
+
+        .article2 .aboutusimg {
+          height: 300px;
+          width: 300px;
+        }
+
+        .article2 {
+          height: 1100px;
+        }
+
+        .imgsize {
+          height: 400px;
+        }
+
+        .size {
+          height: 500px;
+        }
+
+        .article3 {
+          height: 2150px;
+        }
+      }
+
+      @media only screen and (max-width: 350px) {
+        .article2 {
+          height: 1300px;
+        }
+      }
+    </style>
+  </head>
+
+<body>
+  <div id="loader" class="loader"></div>
+  <nav id="nav">
+    <div id="logo">
+      <h1><img src="travele-logo.png" alt="" /></h1>
+    </div>
+
+    <div id="not">
+      <ul id="menulist">
+        <li>
+          <div class="menu-remover">
+            <h1 id="logo2"><img id="logo2" src="travele-logo.png" alt=""></h1><img onclick="toggle()" class="cross"
+              src="icons8-cross-64.png" alt="">
+          </div>
+        </li>
+        <li>
+          <div class="plus-symbol">
+            <a id="helper" href="#">Home </a>
+          </div>
+        </li>
+        <li id="hoverme">
+          <div class="plus-symbol">
+            <a id="helper" href="#">about us </a><img id="plus" src="icons8-plus-symbol-24 (1).png" alt="">
+          </div>
+
+          <ul class="dropdown">
+            <li>
+              <div class="plus-symbol">
+                <a id="helper" href="#">Github </a>
+              </div>
+            </li>
+            <li>
+              <div class="plus-symbol">
+                <a id="helper" href="#">Instagram </a>
+              </div>
+            </li>
+            <li>
+              <div class="plus-symbol">
+                <a id="helper" href="#">Whatsapp </a>
+              </div>
+            </li>
+            <li>
+              <div class="plus-symbol">
+                <a id="helper" href="#">linked in </a>
+              </div>
+            </li>
+          </ul>
+
+        </li>
+        <li>
+          <div class="plus-symbol">
+            <a id="helper" href="#">Contact us</a>
+          </div>
+        </li>
+        <li>
+          <div class="plus-symbol">
+            <a id="helper" href="#">Blog </a><img id="plus" src="icons8-plus-symbol-24 (1).png" alt="">
+          </div>
+        </li>
+        <div id="contact-info">
+          <h1>contact info</h1>
+          <ul id="contact-info-points">
+            <li><img src="icons8-address-24.png" alt="">north-karachi,karachi</li>
+            <li><img src="icons8-phone-24.png" alt="">+92**********</li>
+            <li><img src="icons8-mail-24.png" alt="">abdullahaqeel777lucky@gmail.com</li>
+          </ul>
+
+        </div>
+      </ul>
+
+    </div>
+
+
+
+    </ul>
+    <div id="menu-icon" onclick="toggle()">
+      <button id="menu"><img src="icons8-menu-32.png" alt="" /></button>
+    </div>
+  </nav>
+  <div id="frame">
+
+    <div class="buttons">
+      <button id="back"><img src="icons8-back-50 (1).png" alt="" /></button>
+      <button id="next"><img src="icons8-back-50 (1).png" alt="" /></button>
+    </div>
+
+    <div id="slider">
+      <div class="slider-item">
+        <img class="image" src="winter_mountains_snow_130143_1920x1080.jpg" alt="" />
+        <div class="overlay"></div>
+        <div class="caption1">
+          <h1>TRAVEL AROUND THE WORLD</h1>
+          <div id="search-container">
+            <input type="search" placeholder="Explore with us" />
+            <button id="search">search</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="slider-item">
+        <img class="image" src="lake_mountains_trees_1324221_1920x1080.jpg" alt="" />
+        <div class="overlay"></div>
+        <div class="caption">
+          <h1>
+            "Life is short, and the world is wide. Go out there and explore
+            it.""
+          </h1>
+        </div>
+      </div>
+      <div class="slider-item">
+        <img class="image" src="mountains_night_winter_128603_1920x1080.jpg" alt="" />
+        <div class="overlay"></div>
+        <div class="caption">
+          <h1>
+            "The journey of a thousand miles begins with a single step."
+          </h1>
+        </div>
+      </div>
+      <div class="slider-item">
+        <img class="image" src="lake_forest_snow_130421_1920x1080.jpg" alt="" />
+        <div class="overlay"></div>
+        <div class="caption">
+          <h1>"Take only pictures, leave only footprints."</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="dots-container">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <main>
+    <div class="heading">
+      <h1>Our services</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+        accusantium ab maxime .
+      </p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="icons8-ticket-purchase-48.png" alt="" />
+        <h3>fast service</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          incidunt deleniti hic quisquam?
+        </p>
+      </div>
+      <div class="card">
+        <img src="icons8-travelling-64 (1).png" alt="" />
+        <h3>fast service</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          incidunt deleniti hic quisquam?
+        </p>
+      </div>
+      <div class="card">
+        <img src="icons8-travelling-64.png" alt="" />
+        <h3>fast service</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          incidunt deleniti hic quisquam?
+        </p>
+      </div>
+      <div class="card">
+        <img src="icons8-travelling-66.png" alt="" />
+        <h3>fast service</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          incidunt deleniti hic quisquam?
+        </p>
+      </div>
+      <div class="card">
+        <img src="icons8-glacier-48.png" alt="" />
+        <h3>fast service</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          incidunt deleniti hic quisquam?
+        </p>
+      </div>
+    </div>
+  </main>
+  <div class="heading1">
+    <h1>about us</h1>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+      accusantium ab maxime .
+    </p>
+  </div>
+  <div class="article">
+    <div class="aboutus">
+      <div class="full">
+        <div class="para">
+
+          <p>
+          <div class="import">
+            <img src="icons8-mountain-64.png" alt="">
+            <h1>World Best Travel Agency</h1>
+          </div>
+          praesentium hic, quis quae similique, suscipit deleniti reprehenderit.
+          Nihil laboriosam fugiat pariatur aut ullam quasi. Eum adipisci fugiat
+          aperiam eligendi alias quidem voluptatum quam aliquid amet recusandae
+          mollitia esse deserunt atque aut, libero exercitationem! Saepe,
+          cupiditate deserunt mollitia ipsum non sed, ad tenetur deleniti sint
+          delectus, esse praesentium aperiam ipsam incidunt quam autem nostrum
+          iste Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+          animi nemo? Consequuntur, excepturi eveniet voluptates recusandae
+          minima placeat vero nam tempore consectetur doloremque sit error
+          labore obcaecati. Esse illum, commodi architecto eveniet labore in
+
+
+
+
+          </p>
+        </div>
+        <div class="points">
+          <ul>
+            <div class="point1">
+              <img src="icons8-mountain-48.png" alt="">
+              <li>Ratione voluptatem.sequi nesciunt.</li>
+            </div>
+            <div class="point1">
+              <img src="icons8-mountain-48.png" alt="">
+              <li>Ratione voluptatem.</li>
+            </div>
+            <div class="point1">
+              <img src="icons8-mountain-48.png" alt="">
+              <li>Ratione voluptatem sequi.</li>
+            </div>
+          </ul>
+
+
+
+        </div>
+      </div>
+
+      <div class="imgsize">
+        <img class="aboutusimg" src="Screenshot_1-11-2025_74454_.jpeg" alt="" />
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="article2">
+
+    <div class="aboutus">
+
+      <div class="imgsize">
+        <img class="aboutusimg" src="9372541.jpg" alt="" />
+      </div>
+
+      <div class="full">
+        <div class="para">
+
+          <p>
+          <div class="import">
+            <img src="icons8-japan-64.png" alt="">
+            <h1>World Best Travel Agency</h1>
+          </div>
+          praesentium hic, quis quae similique, suscipit deleniti reprehenderit.
+          Nihil laboriosam fugiat pariatur aut ullam quasi. Eum adipisci fugiat
+          aperiam eligendi alias quidem voluptatum quam aliquid amet recusandae
+          mollitia esse deserunt atque aut, libero exercitationem! Saepe,
+          cupiditate deserunt mollitia ipsum non sed, ad tenetur deleniti sint
+          delectus, esse praesentium aperiam ipsam incidunt quam autem nostrum
+          iste Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+          animi nemo? Consequuntur, excepturi eveniet voluptates recusandae
+          minima placeat vero nam tempore consectetur doloremque sit error
+          labore obcaecati. Esse illum, commodi architecto eveniet labore in
+
+
+
+
+          </p>
+        </div>
+        <div class="points">
+          <ul>
+            <div class="point1">
+              <img src="icons8-mountain-48.png" alt="">
+              <li>Ratione voluptatem.sequi nesciunt.</li>
+            </div>
+            <div class="point1">
+              <img src="icons8-mountain-48.png" alt="">
+              <li>Ratione voluptatem.</li>
+            </div>
+            <div class="point1">
+              <img src="icons8-mountain-48.png" alt="">
+              <li>Ratione voluptatem sequi.</li>
+            </div>
+          </ul>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="heading">
+    <h1>Why Choose Treker</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+      accusantium ab maxime .
+    </p>
+  </div>
+  <div class="article3">
+
+    <div class="aboutimg">
+      <div class="smallcards">
+        <img src="icons8-ticket-purchase-48.png" alt="" />
+        <h1>Fast Booking</h1>
+        <p>Richly varied landscapes, luxury accommodation Travel.</p>
+      </div>
+      <div class="smallcards">
+        <img src="icons8-glacier-48.png" alt="" />
+        <h1>Support Team</h1>
+        <p>Richly varied landscapes, luxury accommodation Travel.</p>
+      </div>
+      <div class="smallcards">
+        <img src="icons8-travelling-64 (1).png" alt="" />
+        <h1>Passionate Travel</h1>
+        <p>Richly varied landscapes, luxury accommodation Travel.</p>
+      </div>
+    </div>
+
+    <div class="impotimage">
+      <img src="why-image-1.svg" alt="" />
+    </div>
+    <div class="aboutimg">
+      <div class="smallcards">
+        <img src="icons8-travelling-66.png" alt="" />
+        <h1>Diverse Destinations</h1>
+        <p>Richly varied landscapes, luxury accommodation Travel.</p>
+      </div>
+      <div class="smallcards">
+        <img src="icons8-travelling-64 (2).png" alt="" />
+        <h1>Value for Money</h1>
+        <p>Richly varied landscapes, luxury accommodation Travel.</p>
+      </div>
+      <div class="smallcards">
+        <img src="icons8-japan-64.png" alt="" />
+        <h1>Beautiful Places</h1>
+        <p>Richly varied landscapes, luxury accommodation Travel.</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="headingofcards">
+    <h1>Our Most Popular Trekking</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quam quisquam veritatis dicta!</p>
+  </div>
+  <section class="sellcards">
+    <img class="bg" src="9381049.jpg" alt="">
+    <div class="all">
+      <div class="sellcard">
+        <div class="imgbox">
+          <img src="illustrative-vision-innovative-passenger-concept-design-transportation_1263357-42693.jpg" alt="">
+        </div>
+        <div class="pricebar">
+          <p>5 days | 259P , himalaya Ag</p>
+
+        </div>
+        <div class="about">
+
+          <h2>mosco red city</h2>
+
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, ullam asperiores? Earum, officiis! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto hic ab!</p>
+
+        </div>
+        <div class="details">
+          <a href="#">View detail</a>
+
+        </div>
+
+
+      </div>
+      <div class="sellcard">
+        <div class="imgbox">
+          <img src="why-image-1.svg" alt="">
+        </div>
+        <div class="pricebar">
+          <p>5 days | 259P , himalaya Ag</p>
+
+        </div>
+        <div class="about">
+
+          <h2>italy pairs</h2>
+
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, ullam asperiores? Earum, officiis! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto hic ab!</p>
+
+        </div>
+        <div class="details">
+          <a href="#">View detail</a>
+
+        </div>
+      </div>
+      <div class="sellcard">
+        <div class="imgbox">
+          <img src="9381049.jpg" alt="">
+        </div>
+        <div class="pricebar">
+          <p>5 days | 259P , himalaya Ag</p>
+
+        </div>
+        <div class="about">
+
+          <h2>india mumbai</h2>
+
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, ullam asperiores? Earum, officiis! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto hic ab!</p>
+
+        </div>
+        <div class="details">
+          <a href="#">View detail</a>
+
+        </div>
+      </div>
+      <div class="sellcard">
+        <div class="imgbox">
+          <img src="9372541.jpg" alt="">
+        </div>
+        <div class="pricebar">
+          <p>5 days | 259P , himalaya Ag</p>
+
+        </div>
+        <div class="about">
+
+          <h2>japan tokyo</h2>
+
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, ullam asperiores? Earum, officiis! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto hic ab!</p>
+
+        </div>
+        <div class="details">
+          <a href="#">View detail</a>
+
+        </div>
+      </div>
+      <div class="sellcard">
+        <div class="imgbox">
+          <img src="happy-family-characters-sitting-car-260nw-1992276782.webp" alt="">
+        </div>
+        <div class="pricebar">
+          <p>5 days | 259P , himalaya Ag</p>
+
+        </div>
+        <div class="about">
+
+          <h2>morroco</h2>
+
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, ullam asperiores? Earum, officiis! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto hic ab!</p>
+
+        </div>
+        <div class="details">
+          <a href="#">View detail</a>
+
+        </div>
+      </div>
+      <div class="sellcard">
+        <div class="imgbox">
+          <img src="hand-drawn-sustainable-travel-illustration_52683-148456.jpg" alt="">
+        </div>
+        <div class="pricebar">
+          <p>5 days | 259P , himalaya Ag</p>
+
+        </div>
+        <div class="about">
+
+          <h2>UAE</h2>
+
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, ullam asperiores? Earum, officiis! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto hic ab!</p>
+
+        </div>
+        <div class="details">
+          <a href="#">View detail</a>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+  <footer>
+
+
+    <div class="footer-row">
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul class="links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Compressions</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Collection</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="links">
+          <li><a href="#">Free Designs</a></li>
+          <li><a href="#">Latest Designs</a></li>
+          <li><a href="#">Themes</a></li>
+          <li><a href="#">Popular Designs</a></li>
+          <li><a href="#">Art Skills</a></li>
+          <li><a href="#">New Uploads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="links">
+          <li><a href="#">Customer Agreement</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">GDPR</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Media Kit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>
+          Subscribe to our newsletter for a weekly dose
+          of news, updates, helpful tips, and
+          exclusive offers.
+        </p>
+        <form action="#">
+          <input type="text" placeholder="Your email" required>
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+        <div class="icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script>
+ 
+  let counter = 0;
+  let slider = document.getElementById("slider");
+  let img = document.querySelectorAll(".image");
+  let next = document.getElementById("next");
+  let back = document.getElementById("back");
+  let navremove = document.querySelector(".nav-remover")
+  window.addEventListener("scroll", function () {
+    let nav = document.getElementById("nav");
+
+    if (window.scrollY > 50) {
+      nav.style.background = "#10182F";
+      nav.style.backdropFilter = "none";
+      nav.style.transition = "all 0.5s"
+    } else {
+      nav.style.background = 'Transparent';
+      nav.style.backdropFilter = "blur(10px)";
+      nav.style.transition = "all 0.5s"
+    }
+  });
+  function updateslider() {
+    updateActiveDot();
+    slider.style.transform = ` translateX(-${counter * 100}vw)`;
+    if (counter === img.length - 1) {
+      next.style.display = "none";
+    } else {
+      next.style.display = "block";
+    }
+    if (counter === 0) {
+      back.style.display = "none";
+    } else {
+      back.style.display = "block";
+    }
+
+  }
+  next.addEventListener(`click`, function () {
+    if (counter < img.length - 1) {
+      counter++;
+      updateslider();
+    }
+  });
+  back.addEventListener(`click`, function () {
+    if (counter > 0) {
+      counter--;
+      updateslider();
+    }
+  });
+  let autoslide;
+  function startautoslider() {
+    autoslide = setInterval(() => {
+      if (counter < img.length - 1) {
+        counter++;
+      } else {
+        counter = 0;
+      }
+      updateslider();
+    }, 2000);
+  }
+  function stopautoslider() {
+    clearInterval(autoslide);
+  }
+  slider.addEventListener("mouseenter", stopautoslider);
+  slider.addEventListener("mouseleave", startautoslider);
+
+  startautoslider()
+
+  updateslider();
+
+
+  let menu = document.getElementById("menulist");
+  menu.style.width = "0px";
+  function toggle() {
+    if (menu.style.width === "0px") {
+      menu.style.width = "350px";
+
+    } else {
+      menu.style.width = "0px";
+
+    }
+
+  }
+
+  console.log(img.length);
+  function updateActiveDot() {
+    let allDots = document.querySelectorAll(".dot");
+    allDots.forEach((dot) => dot.classList.remove("active"));
+    allDots[counter].classList.add("active");
+  }
+  let dotsContainer = document.getElementById("dots-container");
+  function createdots() {
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < img.length; i++) {
+      let dot = document.createElement("div");
+      dot.classList.add("dot");
+      dot.setAttribute("data-index", i);
+
+      dot.addEventListener("click", function () {
+        counter = i;
+        updateslider();
+      });
+      dotsContainer.appendChild(dot);
+    }
+    if (dotsContainer.children.length > 0) {
+      dotsContainer.children[0].classList.add("active");
+    }
+  }
+
+  createdots();
+
+
+
+const cards = document.querySelectorAll('.card');
+
+// Create an intersection observer to detect when the cards come into view
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');  // Add the visible class when in view
+      observer.unobserve(entry.target);  // Stop observing once the card is visible
+    }
+  });
+}, { threshold: 0.5 });  // Trigger when 50% of the card is visible
+
+// Observe each card
+cards.forEach(card => observer.observe(card));
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
